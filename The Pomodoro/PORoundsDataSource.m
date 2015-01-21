@@ -45,4 +45,18 @@
     return [self time][index];
 }
 
+
+-(void)selectCurrentRound:(NSInteger)currentRound {
+    if (currentRound >= [self time].count) {
+        _currentRound =0;
+    }
+    else {
+        _currentRound = currentRound;
+    }
+    
+    [[NSUserDefaults standardUserDefaults] setValue:@(currentRound) forKey:@"CurrentRound"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+}
+
 @end

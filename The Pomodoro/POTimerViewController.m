@@ -68,8 +68,8 @@
 
 -(void)registerForNotification {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newRound:) name:@"newRound" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateButton) name:@"button" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLabel) name:@"label" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateButton) name:SecondTickNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLabel) name:TimerCompleteNotification object:nil];
 
 
 }

@@ -14,4 +14,6 @@
 @property (nonatomic, assign) NSInteger currentRound;
 
 -(NSNumber *)roundAtIndex:(NSInteger)index;
+
+-(void)selectCurrentRound:(NSInteger)currentRound;
 @end
