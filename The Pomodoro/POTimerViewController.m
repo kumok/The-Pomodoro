@@ -11,6 +11,9 @@
 
 @interface POTimerViewController ()
 
+@property (strong, nonatomic) IBOutlet UILabel *label;
+@property (strong, nonatomic) IBOutlet UIButton *button;
+
 @end
 
 @implementation POTimerViewController
@@ -43,7 +46,12 @@
 
 }
 
-- (void)endRound:(NSNotification *)notification {
+
+-(void)registerForNotification {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newRound:) name:@"newRound" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateButton) name:SecondTickNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLabel) name:TimerCompleteNotification object:nil];
+    
     
 }
 
@@ -66,13 +74,6 @@
     }
 }
 
--(void)registerForNotification {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newRound:) name:@"newRound" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateButton) name:SecondTickNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLabel) name:TimerCompleteNotification object:nil];
-
-
-}
 
 -(void)unRegisterForNotification {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"newRound" object:nil];
