@@ -7,13 +7,33 @@
 //
 
 #import "POAppDelegate.h"
+#import "POHistoryViewController.h"
+#import "POTimerViewController.h"
+
 
 @implementation POAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    //.tabBarItem.image .tabBarItem.title
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    POHistoryViewController *historyViewController = [POHistoryViewController new];
+    POTimerViewController *timerViewController = [POTimerViewController new];
+    
+    historyViewController.tabBarItem.title = @"History";
+    historyViewController.tabBarItem.image = [UIImage imageNamed:@"rounds"];
+    timerViewController.tabBarItem.title = @"Timer";
+    timerViewController.tabBarItem.image = [UIImage imageNamed:@"clock"];
+    
+    UITabBarController *tabController = [[UITabBarController alloc] init];
+    
+    tabController.viewControllers = @[[[UINavigationController alloc] initWithRootViewController:historyViewController],[[UINavigationController alloc] initWithRootViewController:timerViewController]];
+    
+    self.window.rootViewController = tabController;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

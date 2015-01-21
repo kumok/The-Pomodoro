@@ -19,6 +19,13 @@
 		7141B301193DBDFE0084F9F1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7141B2E9193DBDFD0084F9F1 /* UIKit.framework */; };
 		7141B309193DBDFE0084F9F1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7141B307193DBDFE0084F9F1 /* InfoPlist.strings */; };
 		7141B30B193DBDFE0084F9F1 /* The_PomodoroTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7141B30A193DBDFE0084F9F1 /* The_PomodoroTests.m */; };
+		EAEBF60E1A6F4B0D0053F8EE /* POHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAEBF60D1A6F4B0D0053F8EE /* POHistoryViewController.m */; };
+		EAEBF6101A6F4D600053F8EE /* clock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAEBF60F1A6F4D600053F8EE /* clock@2x.png */; };
+		EAEBF6121A6F4D6A0053F8EE /* rounds@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAEBF6111A6F4D6A0053F8EE /* rounds@2x.png */; };
+		EAEBF6151A6F4EB80053F8EE /* POTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = EAEBF6141A6F4EB80053F8EE /* POTimer.m */; };
+		EAEBF6191A6F4F750053F8EE /* POTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAEBF6171A6F4F750053F8EE /* POTimerViewController.m */; };
+		EAEBF61A1A6F4F750053F8EE /* POTimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAEBF6181A6F4F750053F8EE /* POTimerViewController.xib */; };
+		EAEBF61D1A6F5A050053F8EE /* PORoundsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = EAEBF61C1A6F5A050053F8EE /* PORoundsDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +55,17 @@
 		7141B306193DBDFE0084F9F1 /* The PomodoroTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "The PomodoroTests-Info.plist"; sourceTree = "<group>"; };
 		7141B308193DBDFE0084F9F1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7141B30A193DBDFE0084F9F1 /* The_PomodoroTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = The_PomodoroTests.m; sourceTree = "<group>"; };
+		EAEBF60C1A6F4B0D0053F8EE /* POHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POHistoryViewController.h; sourceTree = "<group>"; };
+		EAEBF60D1A6F4B0D0053F8EE /* POHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POHistoryViewController.m; sourceTree = "<group>"; };
+		EAEBF60F1A6F4D600053F8EE /* clock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clock@2x.png"; sourceTree = "<group>"; };
+		EAEBF6111A6F4D6A0053F8EE /* rounds@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rounds@2x.png"; sourceTree = "<group>"; };
+		EAEBF6131A6F4EB80053F8EE /* POTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POTimer.h; sourceTree = "<group>"; };
+		EAEBF6141A6F4EB80053F8EE /* POTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POTimer.m; sourceTree = "<group>"; };
+		EAEBF6161A6F4F750053F8EE /* POTimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POTimerViewController.h; sourceTree = "<group>"; };
+		EAEBF6171A6F4F750053F8EE /* POTimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POTimerViewController.m; sourceTree = "<group>"; };
+		EAEBF6181A6F4F750053F8EE /* POTimerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POTimerViewController.xib; sourceTree = "<group>"; };
+		EAEBF61B1A6F5A050053F8EE /* PORoundsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PORoundsDataSource.h; sourceTree = "<group>"; };
+		EAEBF61C1A6F5A050053F8EE /* PORoundsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PORoundsDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +127,15 @@
 			children = (
 				7141B2F4193DBDFD0084F9F1 /* POAppDelegate.h */,
 				7141B2F5193DBDFD0084F9F1 /* POAppDelegate.m */,
+				EAEBF60C1A6F4B0D0053F8EE /* POHistoryViewController.h */,
+				EAEBF60D1A6F4B0D0053F8EE /* POHistoryViewController.m */,
+				EAEBF61B1A6F5A050053F8EE /* PORoundsDataSource.h */,
+				EAEBF61C1A6F5A050053F8EE /* PORoundsDataSource.m */,
+				EAEBF6161A6F4F750053F8EE /* POTimerViewController.h */,
+				EAEBF6171A6F4F750053F8EE /* POTimerViewController.m */,
+				EAEBF6181A6F4F750053F8EE /* POTimerViewController.xib */,
+				EAEBF6131A6F4EB80053F8EE /* POTimer.h */,
+				EAEBF6141A6F4EB80053F8EE /* POTimer.m */,
 				7141B2F7193DBDFD0084F9F1 /* Images.xcassets */,
 				7141B2EC193DBDFD0084F9F1 /* Supporting Files */,
 			);
@@ -118,6 +145,8 @@
 		7141B2EC193DBDFD0084F9F1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EAEBF60F1A6F4D600053F8EE /* clock@2x.png */,
+				EAEBF6111A6F4D6A0053F8EE /* rounds@2x.png */,
 				7141B2ED193DBDFD0084F9F1 /* The Pomodoro-Info.plist */,
 				7141B2EE193DBDFD0084F9F1 /* InfoPlist.strings */,
 				7141B2F1193DBDFD0084F9F1 /* main.m */,
@@ -220,6 +249,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAEBF6101A6F4D600053F8EE /* clock@2x.png in Resources */,
+				EAEBF6121A6F4D6A0053F8EE /* rounds@2x.png in Resources */,
+				EAEBF61A1A6F4F750053F8EE /* POTimerViewController.xib in Resources */,
 				7141B2F0193DBDFD0084F9F1 /* InfoPlist.strings in Resources */,
 				7141B2F8193DBDFD0084F9F1 /* Images.xcassets in Resources */,
 			);
@@ -240,8 +272,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAEBF60E1A6F4B0D0053F8EE /* POHistoryViewController.m in Sources */,
+				EAEBF6151A6F4EB80053F8EE /* POTimer.m in Sources */,
+				EAEBF61D1A6F5A050053F8EE /* PORoundsDataSource.m in Sources */,
 				7141B2F2193DBDFD0084F9F1 /* main.m in Sources */,
 				7141B2F6193DBDFD0084F9F1 /* POAppDelegate.m in Sources */,
+				EAEBF6191A6F4F750053F8EE /* POTimerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +474,7 @@
 				7141B310193DBDFE0084F9F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7141B311193DBDFE0084F9F1 /* Build configuration list for PBXNativeTarget "The PomodoroTests" */ = {
 			isa = XCConfigurationList;
@@ -446,6 +483,7 @@
 				7141B313193DBDFE0084F9F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
