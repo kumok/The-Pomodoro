@@ -43,6 +43,8 @@
     
     [self selectCurrentRound];
     [self postMinute];
+    
+    
 
 }
 
@@ -84,9 +86,14 @@
 }
 
 -(void)selectCurrentRound {
-        [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForItem:self.dataSource.currentRound inSection:0]
-                                    animated:NO
-                            scrollPosition:UITableViewScrollPositionTop];
+    if ( self.dataSource.currentRound > 6) {
+        self.dataSource.currentRound = 0;
+    }
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:self.dataSource.currentRound inSection:0];
+
+    [self.tableView selectRowAtIndexPath:indexPath
+                                animated:NO
+                          scrollPosition:UITableViewScrollPositionTop];
 }
 
 /*
