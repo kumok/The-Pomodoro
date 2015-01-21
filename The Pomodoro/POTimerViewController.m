@@ -6,8 +6,12 @@
 //  Copyright (c) 2015 DevMountain. All rights reserved.
 //
 
+#import <AVFoundation/AVFoundation.h>
+
+
 #import "POTimerViewController.h"
 #import "POTimer.h"
+#import "POHistoryViewController.h"
 
 @interface POTimerViewController ()
 
@@ -25,6 +29,26 @@
     }
     
     return self;
+}
+
+-(void)registerForNotification {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newRound:) name:@"newRound" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateButton) name:SecondTickNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLabel) name:TimerCompleteNotification object:nil];
+    
+    
+}
+
+
+-(void)unRegisterForNotification {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"newRound" object:nil];
+    //    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"button" object:nil];
+    //    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"label" object:nil];
+    
+}
+
+-(void)dealloc {
+    [self unRegisterForNotification];
 }
 
 
@@ -47,13 +71,6 @@
 }
 
 
--(void)registerForNotification {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newRound:) name:@"newRound" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateButton) name:SecondTickNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLabel) name:TimerCompleteNotification object:nil];
-    
-    
-}
 
 -(void)newRound:(NSNotification *)notification {
     [self updateLabel];
@@ -75,16 +92,7 @@
 }
 
 
--(void)unRegisterForNotification {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"newRound" object:nil];
-//    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"button" object:nil];
-//    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"label" object:nil];
 
-}
-
--(void)dealloc {
-    [self unRegisterForNotification];
-}
 /*
 #pragma mark - Navigation
 
