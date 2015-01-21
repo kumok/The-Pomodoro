@@ -32,7 +32,9 @@ NSString * const SecondTickNotification = @"SecondTick";
 
 - (void)startTimer {
     self.on = YES;
+//    NSLog(@"%ld %ld", (long)[POTimer sharedInstance].minutes, (long)[POTimer sharedInstance].seconds);
     [self checkActive];
+    
 }
 
 - (void)endTimer {

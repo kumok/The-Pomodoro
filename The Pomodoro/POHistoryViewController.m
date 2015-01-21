@@ -51,7 +51,7 @@
     [POTimer sharedInstance].minutes = [[self.dataSource roundAtIndex:self.dataSource.currentRound] integerValue];
     [POTimer sharedInstance].seconds = 0;
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"newRound" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NewRoundTimeNotificationName object:nil];
 }
 
 - (void)didReceiveMemoryWarning {

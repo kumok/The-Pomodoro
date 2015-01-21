@@ -32,16 +32,16 @@
 }
 
 -(void)registerForNotification {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newRound:) name:@"newRound" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateButton) name:SecondTickNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLabel) name:TimerCompleteNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newRound:) name:NewRoundTimeNotificationName object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLabel) name:SecondTickNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateButton) name:TimerCompleteNotification object:nil];
     
     
 }
 
 
 -(void)unRegisterForNotification {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"newRound" object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NewRoundTimeNotificationName object:nil];
     //    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"button" object:nil];
     //    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"label" object:nil];
     
@@ -71,16 +71,12 @@
 }
 
 
-
 -(void)newRound:(NSNotification *)notification {
     [self updateLabel];
     [self updateButton];
 }
 
--(void)updateButton {
-    self.button.enabled = YES;
-    [self.button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-}
+
 
 -(void)updateLabel {
     if ([POTimer sharedInstance].seconds < 10) {
@@ -91,6 +87,10 @@
     }
 }
 
+-(void)updateButton {
+    self.button.enabled = YES;
+    [self.button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+}
 
 
 /*
