@@ -60,10 +60,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.label.layer.cornerRadius = 5.0;
+    self.label.layer.cornerRadius = 100;
     self.label.layer.masksToBounds = YES;
     
-    CircleView * cv = [[CircleView alloc] initWithFrame:CGRectMake(self.label.frame.origin.x, self.label.frame.origin.y, 210, 210)];
+    CircleView * cv = [[CircleView alloc] initWithFrame:CGRectMake(self.label.frame.origin.x -20, self.label.frame.origin.y -20, 240 , 240)];
     
     cv.percent = .65;
     [self.view insertSubview:cv belowSubview:self.label];
