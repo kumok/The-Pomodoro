@@ -65,13 +65,12 @@
     
     CircleView * cv = [[CircleView alloc] initWithFrame:CGRectMake(self.label.frame.origin.x -20, self.label.frame.origin.y -20, 240 , 240)];
     
-    cv.percent = .65;
+    cv.percent = 1.0/60.0;
     [self.view insertSubview:cv belowSubview:self.label];
     self.cv = cv;
     cv.backgroundColor = [UIColor whiteColor];
     
-    NSTimer * t =[NSTimer scheduledTimerWithTimeInterval:.01 target:self selector:@selector(onSecond) userInfo:nil repeats:YES];
-    self.t = t;
+    cv.backgroundColor = self.view.backgroundColor;
     
     
     
@@ -80,7 +79,7 @@
 
 -(void)onSecond {
     float cur = self.cv.percent;
-    float new = cur+.01;
+    float new = cur+ (1.0/60.0);
     if (new > 1.0f) new = 0;
     self.cv.percent = new;
     [self.cv setNeedsDisplay];
@@ -92,6 +91,8 @@
 }
 - (IBAction)buttonPressed:(id)sender {
     [[POTimer sharedInstance] startTimer];
+    NSTimer * t =[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(onSecond) userInfo:nil repeats:YES];
+    self.t = t;
     self.button.enabled = NO;
     [self.button setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
 
