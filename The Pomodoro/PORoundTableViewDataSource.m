@@ -39,7 +39,7 @@ static NSString * const CurrentRoundKey = @"CurrentRound";
 }
 
 - (NSArray *)times {
-    return @[@25, @5, @25, @5, @25, @5, @25, @15];
+    return @[@25, @5, @25, @5, @25, @5, @25, @1];
 }
 
 - (void)setCurrentRound:(NSInteger)currentRound {
