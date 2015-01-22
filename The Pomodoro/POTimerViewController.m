@@ -12,11 +12,15 @@
 #import "POTimerViewController.h"
 #import "POTimer.h"
 #import "POHistoryViewController.h"
+#import "CircleView.h"
 
 @interface POTimerViewController ()
 
 @property (strong, nonatomic) IBOutlet UILabel *label;
 @property (strong, nonatomic) IBOutlet UIButton *button;
+@property (nonatomic, strong) CircleView * cv;
+@property (nonatomic, strong) NSTimer * t;
+
 
 @end
 
@@ -56,7 +60,30 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    self.label.layer.cornerRadius = 5.0;
+    self.label.layer.masksToBounds = YES;
+    
+    CircleView * cv = [[CircleView alloc] initWithFrame:CGRectMake(self.label.frame.origin.x, self.label.frame.origin.y, 210, 210)];
+    
+    cv.percent = .65;
+    [self.view insertSubview:cv belowSubview:self.label];
+    self.cv = cv;
+    cv.backgroundColor = [UIColor whiteColor];
+    
+    NSTimer * t =[NSTimer scheduledTimerWithTimeInterval:.01 target:self selector:@selector(onSecond) userInfo:nil repeats:YES];
+    self.t = t;
+    
+    
+    
     [self updateLabel];
+}
+
+-(void)onSecond {
+    float cur = self.cv.percent;
+    float new = cur+.01;
+    if (new > 1.0f) new = 0;
+    self.cv.percent = new;
+    [self.cv setNeedsDisplay];
 }
 
 - (void)didReceiveMemoryWarning {
